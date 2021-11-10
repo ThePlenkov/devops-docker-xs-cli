@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch-curl
+FROM buildpack-deps:buster-curl
 
 ARG XSZIP
 ENV VERSION 0.1
@@ -17,7 +17,7 @@ RUN apt-get update && \
     unzip -d ${XSCLI} /tmp/${XSZIP} && \
     rm --recursive --force /tmp/${XSZIP} && \
     chown --recursive piper:piper ${XSCLI}
-    
+
 USER piper
 WORKDIR /home/piper
 
